@@ -1,0 +1,32 @@
+{
+  "note": "eigsh numerics vs the discrete formula vs the continuous 2*pi^2",
+  "results": {
+    "33": {
+      "N": 33,
+      "h": 0.03125,
+      "lambda_min_eigsh": 19.723359550682176,
+      "lambda_min_formula_discrete": 19.723359550681554,
+      "diff_min_formula": 6.217248937900877e-13,
+      "lambda_min_continuous_2pi2": 19.739208802178716,
+      "error_continuous": 0.015849251496540262,
+      "lambda_max_eigsh": 8172.276640449323,
+      "lambda_max_formula_discrete": 8172.276640449319,
+      "diff_max_formula": 4.547473508864641e-12,
+      "bound_8_over_h2": 8192.0
+    },
+    "65": {
+      "N": 65,
+      "h": 0.015625,
+      "lambda_min_eigsh": 19.735245534454254,
+      "lambda_min_formula_discrete": 19.73524553445552,
+      "diff_min_formula": 1.2647660696529783e-12,
+      "lambda_min_continuous_2pi2": 19.739208802178716,
+      "error_continuous": 0.003963267724461872,
+      "lambda_max_eigsh": 32748.26475446556,
+      "lambda_max_formula_discrete": 32748.264754465545,
+      "diff_max_formula": 1.4551915228366852e-11,
+      "bound_8_over_h2": 32768.0
+    }
+  },
+  "verdict": "PASS: the exact discrete formulas agree with eigsh; the continuous 2*pi^2 is wrong by ~0.016"
+}

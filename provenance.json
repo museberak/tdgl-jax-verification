@@ -1,0 +1,88 @@
+{
+  "version": "v4",
+  "note": "Provenance supplement for the executed v4 run. Complements results.json, which stores only the main parameters.",
+  "solver_config": {
+    "xi": 0.1,
+    "alpha": 1.0,
+    "beta": 1.0,
+    "A": 0.5,
+    "tol": 1e-10,
+    "max_steps": 100000,
+    "chunk_F2_linear": 1000,
+    "chunk_F3_nonlinear": 100,
+    "dt": "1/lambda_max (exact discrete eigenvalues)",
+    "psi_bound": "2*|A| = 1.0 (nonlinear)",
+    "precision": "float64, jax_enable_x64=True (mandatory; TDGL_FORCE_F32 is for mutation test M7 only)",
+    "stability_criterion": "dt * lambda_max < 2 (Richardson); rejected when >= 2"
+  },
+  "gates": {
+    "observed_order": "1.8 <= order <= 2.2",
+    "relative_residual": "rel < 1e-8",
+    "cross_reference": "E_cross < 1e-6",
+    "boundary": "max|psi_boundary| <= 1e-12",
+    "steps": "steps <= max_steps (hard cap)",
+    "finite": "solution and reference must be finite"
+  },
+  "grids": {
+    "F1": [
+      33,
+      65,
+      129,
+      257
+    ],
+    "F2": [
+      33,
+      65,
+      129
+    ],
+    "F3": [
+      33,
+      65,
+      129
+    ]
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-44-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "jax": "0.4.35",
+    "jax_backend": "CpuDevice(id=0)",
+    "scipy": "1.18.1",
+    "numpy": "2.5.5",
+    "x64_in_run": true
+  },
+  "runtime": {
+    "benchmark": "about 19 s",
+    "mutation_suite": "about 10 s (including M1-full, which fails fast at the F1 order gate)"
+  },
+  "execution_results": {
+    "F1_orders": [
+      2.02,
+      2.01,
+      2.01
+    ],
+    "F2_orders": [
+      1.98,
+      1.99
+    ],
+    "F3_orders": [
+      1.98,
+      1.99
+    ],
+    "cross_range": "2e-13 to 3e-10",
+    "mutation": "9/9 CAUGHT, 0 MISSED, 0 INVALID_TEST (8 components + M1-full)",
+    "verdict": "PASS (validator v4, executed 24 November 2026)"
+  },
+  "violation_step_convention": "Zero-based. global = steps before the chunk + local index. The human-readable step number is the reported index plus one. Verified empirically: chunk sizes 100 and 10 both report global step 12 for a forced bound of 0.1.",
+  "fail_fast_scope": "State freeze, not computational fail-fast: after a violation the state is frozen, but the residual is still computed inside the scan. The error is raised after the chunk finishes.",
+  "sha256": {
+    "tdgl_validation.py": "556f5fbfb285d8a8ee8137c4560e238e8aceda76f3e4c60b4caf2701bbb65a02",
+    "mutation_test.py": "5813f70a745e3d5d6c89c58b5c9ddc130b6e29e91c75fab04df43f76d0c1c720",
+    "test_eigsh_evidence.py": "326ff955bb37f52719559e07abe76260a8b2e3b8b60e9642f3e097b46eb5375e",
+    "README.md": "44e8f2c9b29d7a3235680e3a22257225cc333cdae4599361853513bde179c65a",
+    "docs/HISTORY.md": "a49aaa81c94016d9f5bc6c0062b13a8ab1ff1cb8bb26a4ce866718fd26213c74",
+    "results.json": "68e5860692c3d924fce499727f5cc7f8625aa5d422c45ad0b7827413e2caae8f",
+    "eigsh_evidence.json": "575adf14a4c311ca968f7a33de1be9330f45414a7ad045fe92c6b391247362a9",
+    "logs/run.log": "c37a0f8b9a0e136417e44f548976cede6caaea504715ba87d2f67dc52449039e",
+    "logs/mutation.log": "d52987974985d18ce83afc39ca1c7afaa10d79fbe6f4cc8c423f5a92c93fa48e"
+  }
+}
