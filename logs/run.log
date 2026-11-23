@@ -1,0 +1,32 @@
+JAX 0.4.35  x64=True  dtype=float64  scipy 1.18.1
+
+=== F1 Poisson (33,65,129,257) ===
+F1 N= 33 h=0.031250  L2=8.180259e-03  Linf=1.584925e-02
+F1 N= 65 h=0.015625  L2=2.013088e-03  Linf=3.963268e-03
+F1 N=129 h=0.007812  L2=4.993394e-04  Linf=9.908766e-04
+F1 N=257 h=0.003906  L2=1.243472e-04  Linf=2.477229e-04
+F1 order 33->65: 2.02
+F1 order 65->129: 2.01
+F1 order 129->257: 2.01
+
+=== F2 linear (33,65,129) ===
+F2-linear N= 33 h=0.031250 dt=1.209e-02 lam=82.7 lam_min=1.197 steps=2000 res_final=6.72e-14 rel=2.18e-13 max|psi|_it=0.500 L2=3.209267e-05 Linf=6.619114e-05
+  cross F2 N=33  E_cross=2.173e-13 rel_solver=2.18e-13 rel_ref=6.17e-15 steps=2000 (gate < 1e-6)
+F2-linear N= 65 h=0.015625 dt=3.044e-03 lam=328.5 lam_min=1.197 steps=6000 res_final=9.28e-11 rel=3.05e-10 max|psi|_it=0.500 L2=8.147681e-06 Linf=1.654998e-05
+  cross F2 N=65  E_cross=3.050e-10 rel_solver=3.05e-10 rel_ref=2.53e-14 steps=6000 (gate < 1e-6)
+F2-linear N=129 h=0.007812 dt=7.625e-04 lam=1311.5 lam_min=1.197 steps=24000 res_final=9.10e-11 rel=3.02e-10 max|psi|_it=0.500 L2=2.052727e-06 Linf=4.137528e-06
+  cross F2 N=129  E_cross=3.018e-10 rel_solver=3.02e-10 rel_ref=9.39e-14 steps=24000 (gate < 1e-6)
+F2 order 33->65: 1.98
+F2 order 65->129: 1.99
+
+=== F3 nonlinear (33,65,129) ===
+F3-nonlinear N= 33 h=0.031250 dt=1.167e-02 lam=85.7 lam_min=1.197 steps=1300 res_final=1.89e-11 rel=5.46e-11 max|psi|_it=0.500 L2=2.408077e-05 Linf=4.319517e-05
+  cross F3 N=33  E_cross=4.676e-11 rel_solver=5.46e-11 rel_ref=3.14e-15 steps=1300 (gate < 1e-6)
+F3-nonlinear N= 65 h=0.015625 dt=3.017e-03 lam=331.5 lam_min=1.197 steps=4800 res_final=6.36e-11 rel=1.87e-10 max|psi|_it=0.500 L2=6.113660e-06 Linf=1.080328e-05
+  cross F3 N=65  E_cross=1.599e-10 rel_solver=1.87e-10 rel_ref=1.23e-14 steps=4800 (gate < 1e-6)
+F3-nonlinear N=129 h=0.007812 dt=7.607e-04 lam=1314.5 lam_min=1.197 steps=18700 res_final=9.77e-11 rel=2.89e-10 max|psi|_it=0.500 L2=1.540268e-06 Linf=2.701038e-06
+  cross F3 N=129  E_cross=2.477e-10 rel_solver=2.89e-10 rel_ref=5.07e-14 steps=18700 (gate < 1e-6)
+F3 order 33->65: 1.98
+F3 order 65->129: 1.99
+
+=== ALL VALIDATORS PASSED (v4) — provenance: /home/hatch/workspace/tdgl-jax-verification/results.json ===

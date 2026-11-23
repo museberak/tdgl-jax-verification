@@ -1,0 +1,8 @@
+N=33 h=0.031250
+  lam_min eigsh=19.723360 formula=19.723360 diff=6.22e-13 | continuous err=0.0158
+  lam_max eigsh=8172.3 formula=8172.3 diff=4.55e-12 | bound 8/h^2=8192.0
+N=65 h=0.015625
+  lam_min eigsh=19.735246 formula=19.735246 diff=1.26e-12 | continuous err=0.0040
+  lam_max eigsh=32748.3 formula=32748.3 diff=1.46e-11 | bound 8/h^2=32768.0
+
+EIGSH EVIDENCE PASS — /home/hatch/workspace/tdgl-jax-verification/eigsh_evidence.json
